@@ -64,8 +64,16 @@ echo stripslashes($options['analytics']);
 
 ?>
 
+<!--
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/ASCIIMathTeXImg.js">
+</script>
+-->
 
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/ASCIIMathTeXImg.js" />
+<!-- Add MathJAX service to support mathematics -->
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 </head>
 
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/plusone.js">
