@@ -23,6 +23,10 @@ $options = get_option( 'cleanmag_theme_settings' );
 <?php if ( is_singular() || is_page() ){ ?>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/comments-ajax.js"></script>
 <?php } ?>
+<script type="text/javascript"
+  src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 
 <script type="text/javascript" charset="utf-8">
 jQuery(function($){
@@ -64,23 +68,7 @@ echo stripslashes($options['analytics']);
 
 ?>
 
-<!--
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/ASCIIMathTeXImg.js">
-</script>
--->
-
-<!-- Add MathJAX service to support mathematics -->
-<script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
 </head>
-
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/plusone.js">
-
-  {lang: 'zh-CN'}
-
-</script>
 
 <body <?php body_class($class); ?>>
 
