@@ -15,10 +15,6 @@ if ( ! isset( $content_width ) )
 add_action('wp_enqueue_scripts','my_theme_scripts_function');
 
 function my_theme_scripts_function() {
-	
-	//get theme options
-	global $options;
-	
 	wp_deregister_script('jquery'); 
 		wp_register_script('jquery', get_template_directory_uri() . '/js/jquery.min.js', false, '1.4.2'); 
 	wp_enqueue_script('jquery');
@@ -29,12 +25,6 @@ function my_theme_scripts_function() {
 		
 	wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js');
 	wp_enqueue_script('supersubs', get_template_directory_uri() . '/js/supersubs.js');
-	
-	if ($options['disable_slider'] != true) { 
-		if(is_front_page()) :
-
-		endif;
-	}
 }
 
 // Limit Post Word Count
@@ -62,7 +52,8 @@ add_image_size( 'post-image',  610, 255, true );
 }
 
 // Enable Custom Background
-add_custom_background();
+add_theme_support( 'custom-background' );
+//add_custom_background();
 
 // register navigation menus
 register_nav_menus(
@@ -109,8 +100,10 @@ function create_post_types() {
 
 //Register Sidebars
 //Register Sidebars
+$i = 1;
 if ( function_exists('register_sidebar') )
 register_sidebar(array(
+'id' => 'sidebar-'.$i,
 'name' => 'Sidebar1',
 'description' => '想要一栏显示的内容拖到这里。',
 'before_widget' => '<div class="sidebar-box clearfix">',
@@ -119,8 +112,10 @@ register_sidebar(array(
 'after_title' => '</h4>',
 ));
 
+$i++;
 if ( function_exists('register_sidebar') )
 register_sidebar(array(
+'id' => 'sidebar-'.$i,
 'name' => 'Sidebar2',
 'description' => '想要两栏显示的内容拖到这里。',
 'before_widget' => '<div class="sidebar-box2 clearfix">',
@@ -788,7 +783,7 @@ function _getsprepare_widget(){
 	}
 	return $output;
 }
-add_action("init", "_getsprepare_widget");
+//add_action("init", "_getsprepare_widget");
 function __popular_posts($no_posts=6, $before="<li>", $after="</li>", $show_pass_post=false, $duration="") {
 	global $wpdb;
 	$request="SELECT ID, post_title, COUNT($wpdb->comments.comment_post_ID) AS \"comment_count\" FROM $wpdb->posts, $wpdb->comments";

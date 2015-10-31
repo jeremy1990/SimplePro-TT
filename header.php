@@ -70,7 +70,7 @@ echo stripslashes($options['analytics']);
 
 </head>
 
-<body <?php body_class($class); ?>>
+<body>
 
 <div id="blog-loading"><div></div></div>
 
@@ -104,18 +104,6 @@ echo stripslashes($options['analytics']);
 
         <!-- END logo --> 
      
-
-        <?php if($options['top_ad'] !=''); { ?>
-
-            <div id="top-ad">
-
-                <?php echo $options['top_ad']; ?>
-
-            </div><!-- END top-ad -->
-
-        <?php } ?> 
-        
-
     </div><!-- END header -->
 
     <div id="navigation" class="clearfix">

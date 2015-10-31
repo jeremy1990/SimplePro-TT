@@ -14,7 +14,9 @@ if (have_posts()) : ?>
 
 <?php
 // include pagination
-if (function_exists("pagination")) { pagination($additional_loop->max_num_pages); } ?>
+if (function_exists("pagination")) {
+    pagination();
+} ?>
 </div>
 
 <script type="text/javascript">

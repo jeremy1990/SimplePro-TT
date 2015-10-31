@@ -40,7 +40,7 @@ $("#blog-loading div").animate({width:"30%"})
 
 	<div id="sub-description">
 
-		<?php echo category_description( $category ); ?>
+		<?php echo category_description(); ?>
 
     </div><!-- END sub-description --> 
 
@@ -64,6 +64,6 @@ $("#blog-loading div").animate({width:"45%"})
 
 <!-- END post -->
 
-<?php get_sidebar(' '); ?>	  
+<?php get_sidebar(' '); ?>
 
 <?php get_footer(' '); ?>
